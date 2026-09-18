@@ -1,0 +1,312 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Online Presence Audit | Gallagher Solar</title><style>
+:root{--bg:#0d1117;--panel:#161b22;--ink:#e6edf3;--mut:#9aa7b4;--line:#2a3340;--accent:#2f81f7;
+  --good:#3fb950;--bad:#f85149;--gradF:#f85149;--gradD:#e8702a;--gradC:#d29922;--gradB:#3fb950;--gradA:#2ea043;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:var(--mut);font-weight:600}
+header{padding:46px 0 28px;border-bottom:1px solid var(--line);background:radial-gradient(1200px 400px at 70% -10%,rgba(47,129,247,.18),transparent)}
+h1{font-size:30px;font-weight:800;margin:10px 0 6px;letter-spacing:-.01em}
+.sub{color:var(--mut);font-size:15px}
+.hero{display:grid;grid-template-columns:300px 1fr;gap:26px;align-items:center;margin:34px 0 8px}
+@media(max-width:760px){.hero{grid-template-columns:1fr}}
+.gradecard{border:1px solid var(--line);border-radius:18px;padding:26px;text-align:center;position:relative;overflow:hidden}
+.gc-F{background:linear-gradient(160deg,#2a1410,#1c2330)}.gc-D{background:linear-gradient(160deg,#2a1c10,#1c2330)}
+.gc-C{background:linear-gradient(160deg,#2a2410,#1c2330)}.gc-B{background:linear-gradient(160deg,#102a1a,#1c2330)}
+.bigletter{font-size:96px;font-weight:900;line-height:1;position:relative}
+.bl-F{color:var(--gradF);text-shadow:0 0 40px rgba(248,81,73,.45)}
+.bl-D{color:var(--gradD);text-shadow:0 0 40px rgba(232,112,42,.45)}
+.bl-C{color:var(--gradC);text-shadow:0 0 40px rgba(210,153,34,.45)}
+.score100{font-size:18px;color:var(--mut);margin-top:6px;position:relative}
+.heroread h2{font-size:21px;font-weight:800;margin-bottom:10px}
+.heroread p{color:var(--mut);font-size:15.5px}
+.heroread .tag{display:inline-block;margin-top:14px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;font-size:13px;color:var(--ink);background:var(--panel)}
+section{padding:34px 0;border-bottom:1px solid var(--line)}
+.h{font-size:13px;color:var(--mut);text-transform:uppercase;letter-spacing:.14em;font-weight:700;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}}
+.row{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}
+.rname{font-weight:600;font-size:15px}
+.bar{height:7px;background:#0b0f15;border-radius:99px;margin-top:9px;overflow:hidden}
+.fill{height:100%;border-radius:99px}
+.badge{font-weight:800;font-size:15px;min-width:46px;height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#0d1117}
+.gF{background:var(--gradF)}.gD{background:var(--gradD)}.gC{background:var(--gradC)}.gB{background:var(--gradB);color:#06210f}.gA{background:var(--gradA);color:#06210f}
+.sc{font-size:12px;color:var(--mut);margin-top:3px}
+.flag{background:linear-gradient(160deg,#2a1410,#161b22);border:1px solid #6f2a1f;border-radius:14px;padding:20px 22px;margin-bottom:14px}
+.flag .lab{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--bad);font-weight:700;margin-bottom:8px}
+.win{background:linear-gradient(160deg,#0f2417,#161b22);border:1px solid #1f6f3a;border-radius:14px;padding:20px 22px;margin-bottom:14px}
+.win .lab{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--good);font-weight:700;margin-bottom:8px}
+.warn{background:linear-gradient(160deg,#2a2410,#161b22);border:1px solid #6f5a1f;border-radius:14px;padding:20px 22px;margin-bottom:14px}
+.warn .lab{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--gradC);font-weight:700;margin-bottom:8px}
+.flag p,.win p,.warn p{color:var(--mut);font-size:14.5px;margin-bottom:9px}
+.flag p:last-child,.win p:last-child,.warn p:last-child{margin-bottom:0}
+.flag b,.win b,.warn b{color:var(--ink)}
+.flag ul,.win ul,.warn ul{margin:0 0 9px 20px;color:var(--mut);font-size:14.5px}
+.flag li,.win li,.warn li{margin-bottom:6px}
+.code{background:#0b0f15;border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin:12px 0;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12.5px;line-height:1.85;color:var(--mut);overflow-x:auto}
+.code .ph{color:#ff9d94;font-weight:700}.code .ok{color:#84e0a8;font-weight:700}.code .c{color:#5b6672}
+.cmp{width:100%;border-collapse:collapse;font-size:14px;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.cmp th{text-align:left;padding:11px 14px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);border-bottom:1px solid var(--line);font-weight:700}
+.cmp td{padding:11px 14px;border-bottom:1px solid var(--line);color:var(--mut);vertical-align:top}
+.cmp tr:last-child td{border-bottom:none}.cmp td b{color:var(--ink)}.cmp tr.you td{background:#241a12}
+.cmp .yes{color:var(--good);font-weight:700}.cmp .no{color:var(--bad);font-weight:700}
+.opp{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:760px){.opp{grid-template-columns:1fr}}
+.ocard{background:linear-gradient(160deg,#0f2417,#161b22);border:1px solid #1f6f3a;border-radius:14px;padding:20px;text-align:center}
+.ocard .lab{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--mut)}
+.ocard .big{font-size:30px;font-weight:900;color:var(--good);margin:8px 0 2px}
+.ocard .small{font-size:13px;color:var(--mut)}
+.oppnote{color:var(--mut);font-size:14px;margin-top:14px}.oppnote b{color:var(--ink)}
+.arrow{display:flex;align-items:center;justify-content:center;gap:18px;margin:6px 0 2px;flex-wrap:wrap}
+.pill{font-size:60px;font-weight:900;line-height:1}
+.pill.from-F{color:var(--gradF)}.pill.from-D{color:var(--gradD)}.pill.from-C{color:var(--gradC)}
+.pill.to{color:var(--gradA)}
+.pilllab{font-size:12px;color:var(--mut);text-align:center;text-transform:uppercase;letter-spacing:.1em}
+.ar{font-size:34px;color:var(--mut)}
+ul.road{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:760px){ul.road{grid-template-columns:1fr}}
+ul.road li{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:8px;padding:11px 14px;font-size:14.5px}
+.road2 li{border-left-color:var(--good)}
+.cta{text-align:center;padding:40px 0 56px}
+.cta h2{font-size:22px;font-weight:800;margin-bottom:8px}
+.cta p{color:var(--mut);font-size:15px}
+footer{color:var(--mut);font-size:12.5px;text-align:center;padding:22px 0 40px;line-height:1.7}
+.gscale{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px 26px 20px;margin-top:16px}
+.gscale .gtitle{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--mut);font-weight:700;margin-bottom:26px;text-align:center}
+.gtrack{position:relative;height:14px;border-radius:8px;background:linear-gradient(90deg,#f85149 0%,#f85149 18%,#e3833c 34%,#d4a72c 52%,#7ec46a 74%,#3fb950 100%);margin:0 4px}
+.gmark{position:absolute;top:-46px;transform:translateX(-50%);text-align:center;white-space:nowrap}
+.gmark .gm-lab{font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--mut);font-weight:700}
+.gmark .gm-val{font-size:19px;font-weight:900;line-height:1.15}
+.gmark:after{content:"";position:absolute;left:50%;top:100%;width:2px;height:22px;transform:translateX(-50%);background:currentColor;opacity:.75}
+.gmark.now{color:var(--bad)}.gmark.now .gm-val{color:var(--bad)}
+.gmark.proj{color:var(--good)}.gmark.proj .gm-val{color:var(--good)}
+.gmark.proj{top:auto;bottom:-52px}
+.gmark.proj:after{top:auto;bottom:100%}
+.gdot{position:absolute;top:50%;width:16px;height:16px;border-radius:50%;transform:translate(-50%,-50%);border:3px solid #0d1117}
+.gdot.now{background:var(--bad)}.gdot.proj{background:var(--good)}
+.gticks{display:flex;justify-content:space-between;margin:66px 4px 0;font-size:11px;letter-spacing:.08em;color:var(--mut);font-weight:700}
+@media(max-width:620px){.gmark .gm-lab{font-size:9px}.gmark .gm-val{font-size:16px}}
+
+.agnav{position:sticky;top:0;z-index:60;background:rgba(13,17,23,.93);backdrop-filter:blur(9px);border-bottom:1px solid var(--line)}
+.agnav .inner{max-width:1080px;margin:0 auto;padding:0 22px;display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+.agnav .inner::-webkit-scrollbar{display:none}
+.agnav a{flex:0 0 auto;padding:13px 12px;font-size:13.5px;font-weight:600;color:var(--mut);text-decoration:none;border-bottom:2px solid transparent;white-space:nowrap}
+.agnav a:hover{color:var(--ink)}
+.agnav a.on{color:var(--accent);border-bottom-color:var(--accent)}
+.agnav a.ext{opacity:.8}
+@media(max-width:640px){.agnav .inner{padding:0 14px}.agnav a{padding:12px 10px;font-size:13px}}
+</style></head><body><nav class="agnav"><div class="inner"><a href="assets.html">All Assets</a><a href="./" class="on">Audit</a><a href="competitors.html">Competitors</a><a href="https://andrei170.github.io/gallagher-solar-demo/" class="ext" target="_blank" rel="noopener">Concept Site &#8599;</a></div></nav>
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Online Presence Audit &middot; Gallagher Solar &middot; Lubbock, Texas</div>
+    <div class="sub">Prepared for Keefe Gallagher &middot; 18 September 2026 &middot; AG1 Consulting</div>
+    <h1>You Have Owned The Domain For Three Years And Five Months. Nothing Has Ever Been Served On It.</h1>
+
+    <div class="hero">
+      <div class="gradecard gc-F">
+        <div class="bigletter bl-F" style="font-size:52px">0</div>
+        <div class="score100">web pages anyone can reach, anywhere</div>
+      </div>
+      <div class="heroread">
+        <h2>gallaghersolar.solutions does not resolve to a server. Not a holding page, not a "coming soon" &mdash; nothing.</h2>
+        <p>Your email runs through that domain perfectly well. <b>The website side of it has never been pointed at
+        anything.</b> Every person who has ever typed it in, or clicked it from a card or a truck, got an error.</p>
+        <div class="tag">DNS, registration and BBB records checked 18 September 2026</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="h">Finding 1 &mdash; The Exact State Of The Domain</div>
+    <div class="code">
+gallaghersolar.solutions
+
+  Registered:        <span class="ok">25 April 2023</span>   (Squarespace Domains II LLC)
+  Expires:           <span class="ok">25 April 2027</span>
+  Nameservers:       <span class="ok">Google Cloud DNS</span>  &mdash; so it is configured, not abandoned
+
+  A record  (the website):      <span class="ph">none</span>
+  AAAA record:                  <span class="ph">none</span>
+  CNAME:                        <span class="ph">none</span>
+  www.gallaghersolar.solutions: <span class="ph">does not exist</span>
+
+  MX records (email):           <span class="ok">Google Workspace &mdash; working</span>
+    </div>
+    <div class="flag">
+      <div class="lab">This is the whole finding in one line</div>
+      <p><b>You are paying for the domain and paying for Google Workspace, and using half of it.</b> The email half works.
+      The website half has never been switched on. Three years and five months of anybody who looked you up finding
+      nothing at all.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="h">Finding 2 &mdash; Your Email Has No Protection On It</div>
+    <div class="code">
+Email authentication records on gallaghersolar.solutions:
+
+  SPF    (says which servers may send as you)     <span class="ph">none</span>
+  DKIM   (signs your mail so it can be trusted)   <span class="ph">none published</span>
+  DMARC  (tells inboxes what to do with fakes)    <span class="ph">none</span>
+    </div>
+    <div class="warn">
+      <div class="lab">Two consequences, and the second one is the expensive one</div>
+      <ul>
+        <li><b>Your quotes are more likely to land in spam.</b> Gmail and Outlook have tightened hard on unauthenticated
+        mail. A proposal that never gets seen looks identical to a customer who went quiet.</li>
+        <li><b>Anybody can send email that appears to come from your domain.</b> With no SPF or DMARC there is nothing
+        stopping it. For a business sending quotes with dollar figures on them, that is worth closing.</li>
+      </ul>
+      <p style="margin-top:8px">All three records are free and take about twenty minutes. This is the first thing we
+      would do, before anything else.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="h">Finding 3 &mdash; What Actually Exists About You Online</div>
+    <div class="code">
+  Website                       <span class="ph">none &mdash; domain does not resolve</span>
+  gallaghersolar.com            <span class="ok">unregistered and available</span>
+  southplainssolar.com          <span class="ph">unregistered &mdash; that domain is gone entirely</span>
+
+  BBB profile                   <span class="ok">exists</span>  A+ rating, <span class="ph">not accredited</span>
+                                0 customer reviews, 0 complaints
+  Facebook page                 <span class="ok">exists</span>  facebook.com/GallagherSolar
+                                <span class="ph">we could not read it &mdash; Facebook required a login</span>
+  Meta advertising              <span class="ph">no ads found attributable to you</span>
+  Third-party directories       <span class="ok">several</span>  &mdash; see below
+    </div>
+    <div class="flag">
+      <div class="lab">The BBB profile is the only thing you control that a customer can read</div>
+      <p>An A+ rating with zero reviews is not a criticism &mdash; it simply means the rating is not built on customer
+      feedback yet, and a careful buyer will notice that. <b>It is also, right now, the most substantial page about your
+      business on the entire internet.</b></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="h">Finding 4 &mdash; Directories Are Publishing Your Details, And Getting Them Wrong</div>
+    <div style="overflow-x:auto">
+    <table class="cmp">
+      <tr><th>Source</th><th>Address published</th><th>Phone published</th></tr>
+      <tr><td><b>BBB profile</b></td><td>8502 US 87 South, Lubbock, TX 79423</td><td>(806) 577-8576</td></tr>
+      <tr><td><b>Third-party directory listings</b></td><td class="no">8402 US-87, Lubbock, TX 79423</td><td class="no">(806) 777-4414</td></tr>
+    </table>
+    </div>
+    <div class="warn">
+      <div class="lab">Two addresses, two phone numbers, and one outright false claim</div>
+      <ul>
+        <li><b>The street numbers disagree</b> &mdash; 8502 against 8402 &mdash; and so do the phone numbers.</li>
+        <li>At least one directory states that your business <b>"maintains an active website with service detail"</b>.
+        <b>That is simply false</b> &mdash; there is no website. These pages are auto-generated and nobody checks them.</li>
+        <li><b>When a search engine sees your name, address and phone stated differently in different places, it trusts
+        all of them less.</b> This is the one part of local search that is genuinely mechanical, and it is fixable.</li>
+      </ul>
+      <p style="margin-top:8px"><b>We are not telling you which is correct</b> &mdash; you are. But right now the internet
+      is publishing two versions of your business and you have no page of your own to settle it.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="h">Finding 5 &mdash; Every Job Currently Depends On Somebody Else's Goodwill</div>
+    <div class="win">
+      <div class="lab">What you told us</div>
+      <ul>
+        <li>You could take <b>five to ten more installs</b> with what you have now.</li>
+        <li>You are doing <b>$500,000 to $700,000</b> and want to roughly double that in a year or two.</li>
+        <li>Your work comes <b>through roofers</b>, plus referrals and repeat customers.</li>
+        <li>You have <b>worked with lead generation before</b>.</li>
+      </ul>
+    </div>
+    <div class="flag">
+      <div class="lab">The risk nobody mentions until it happens</div>
+      <p>A referral pipeline is a good pipeline right up until the referrer changes their mind. <b>One of the solar firms
+      in Lubbock already sells roofing alongside solar</b> &mdash; which means the roofers you rely on are exactly the
+      relationship a competitor has a reason to go after. If two of your roofers go elsewhere, you have no second channel
+      and no page for anyone to find.</p>
+      <p><b>The point of a website here is not vanity.</b> It is that a roofer can send someone a link and look good doing
+      it, and that some jobs arrive without a middleman taking a cut.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="h">The Scorecard</div>
+    <div class="grid">
+      <div class="row"><div><div class="rname">Website</div><div class="sc">Domain does not resolve at all</div></div><div class="badge gF">F</div></div>
+      <div class="row"><div><div class="rname">Email authentication</div><div class="sc">No SPF, DKIM or DMARC</div></div><div class="badge gF">F</div></div>
+      <div class="row"><div><div class="rname">Measurement</div><div class="sc">Nothing to measure &mdash; no site exists</div></div><div class="badge gF">F</div></div>
+      <div class="row"><div><div class="rname">Proof a customer can read</div><div class="sc">0 reviews on the only profile we could read</div></div><div class="badge gF">F</div></div>
+      <div class="row"><div><div class="rname">Advertising</div><div class="sc">No ads found attributable to the business</div></div><div class="badge gD">D</div></div>
+      <div class="row"><div><div class="rname">Name, address and phone</div><div class="sc">Two addresses and two numbers in circulation</div></div><div class="badge gD">D</div></div>
+      <div class="row"><div><div class="rname">Social presence</div><div class="sc">Facebook page exists; not readable to us</div></div><div class="badge gC">C</div></div>
+      <div class="row"><div><div class="rname">Domain assets</div><div class="sc">Domain and Workspace already paid for</div></div><div class="badge gB">B</div></div>
+      <div class="row"><div><div class="rname">Referral pipeline</div><div class="sc">Working, via roofers and repeat customers</div></div><div class="badge gA">A</div></div>
+      <div class="row"><div><div class="rname">Spare capacity</div><div class="sc">5 to 10 more installs available now</div></div><div class="badge gA">A</div></div>
+    </div>
+    <div class="tag" style="margin-top:12px">The bottom two rows are why this is worth doing. The capacity and the trade are already there.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="h">What We Would Do, In Order</div>
+    <ul class="road">
+      <li><b>Fix the email records first.</b> SPF, DKIM and DMARC. Free, twenty minutes, and it protects every quote you
+      send from here on.</li>
+      <li><b>Point the domain at an actual site</b> &mdash; and decide whether to pick up gallaghersolar.com while it is
+      still available, because a .com is easier to say down a phone.</li>
+      <li><b>Build the page a roofer can forward.</b> Your work, your finance options, what happens after the install, and
+      a form that captures the roof and the bill before you drive out.</li>
+      <li><b>Settle the address and the phone number in one place</b>, then correct the directories against it.</li>
+      <li><b>Put the meter on before any spend</b>, so when we do go after volume, you can see which jobs came from where
+      &mdash; which is the part that was missing last time you tried lead generation.</li>
+    </ul>
+  </div>
+</section>
+
+<div class="cta">
+  <div class="wrap">
+    <h2>Five to ten more installs a month, and nowhere for anyone to land.</h2>
+    <p>The crew, the trade and the referrals already work. The front door has never been built.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    Prepared by Andrei Givero &middot; AG1 Consulting &middot; 18 September 2026<br><br>
+    For Keefe Gallagher, Gallagher Solar, Lubbock, Texas. <b>The domain findings were taken from live DNS queries against
+    Google Public DNS and from the registry's own RDAP record on 18 September 2026</b> &mdash; the absence of A, AAAA and
+    CNAME records, the non-existence of the www hostname, the presence of Google Workspace MX records, the absence of SPF,
+    DKIM and DMARC records, the 25 April 2023 registration date, the 25 April 2027 expiry and the registrar. The
+    availability of gallaghersolar.com and the unregistered status of southplainssolar.com were confirmed by RDAP lookups
+    returning no registration on the same date. <b>The business name, address, telephone number, owner name, A+ rating,
+    non-accredited status, 4 April 2023 start date and the counts of zero reviews and zero complaints are exactly as
+    published on the business's own BBB profile</b>; the conflicting address and telephone number are as published by
+    third-party directory websites, which are automatically generated and which we cite only to show that they disagree.
+    <b>We express no view on which address or telephone number is correct.</b> The Facebook page was found to exist but
+    required a login and <b>its contents have not been read or assessed in any way.</b> The Meta Ad Library was searched
+    for the exact phrase "Gallagher Solar" and returned only results attributable to an unrelated business; <b>this is not
+    proof that no advertising exists.</b> Revenue, capacity, referral sources and prior lead generation experience are as
+    reported to AG1 and have not been independently verified; <b>no turnover figure has been estimated or derived by
+    us.</b> Items recorded as "none" or "not found" describe what our check returned on that date. <b>No enquiry volume,
+    install volume, ranking, cost per lead or revenue outcome is forecast or promised anywhere in this document</b>, and
+    no claim whatsoever is made or implied about the licensing, registration, insurance, certification or workmanship of
+    this or any other business. Nothing here is legal, financial, tax or business advice. Company names are used for
+    identification only and belong to their respective owners. The grades are AG1's own editorial assessment.
+  </div>
+</footer>
+</body></html>
